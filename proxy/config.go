@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/mikule1/eppool/api"
-	"github.com/mikule1/eppool/payouts"
-	"github.com/mikule1/eppool/policy"
-	"github.com/mikule1/eppool/storage"
+	"github.com/TeamEGEM/open-egem-pool/api"
+	"github.com/TeamEGEM/open-egem-pool/payouts"
+	"github.com/TeamEGEM/open-egem-pool/policy"
+	"github.com/TeamEGEM/open-egem-pool/storage"
 )
 
 type Config struct {
@@ -17,6 +17,7 @@ type Config struct {
 	Threads int `json:"threads"`
 
 	Coin  string         `json:"coin"`
+	Pplns int64          `json:"pplns"`
 	Redis storage.Config `json:"redis"`
 
 	BlockUnlocker payouts.UnlockerConfig `json:"unlocker"`

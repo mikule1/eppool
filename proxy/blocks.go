@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/mikule1/eppool/rpc"
-	"github.com/mikule1/eppool/util"
+	"github.com/TeamEGEM/open-egem-pool/rpc"
+	"github.com/TeamEGEM/open-egem-pool/util"
 )
 
 const maxBacklog = 3
