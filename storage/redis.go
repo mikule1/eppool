@@ -9,7 +9,7 @@ import (
 
 	"gopkg.in/redis.v3"
 
-	"github.com/TeamEGEM/open-egem-pool/util"
+	"github.com/mikule1/eppool/util"
 )
 
 type Config struct {

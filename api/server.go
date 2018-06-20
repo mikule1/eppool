@@ -13,8 +13,8 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/robfig/cron"
-	"github.com/TeamEGEM/open-egem-pool/storage"
-	"github.com/TeamEGEM/open-egem-pool/util"
+	"github.com/mikule1/eppool/storage"
+	"github.com/mikule1/eppool/util"
 )
 
 type ApiConfig struct {
