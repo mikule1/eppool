@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/sammy007/open-ethereum-pool/storage"
-	"github.com/sammy007/open-ethereum-pool/util"
+	"github.com/mikule1/eppool/storage"
+	"github.com/mikule1/eppool/util"
 )
 
 type Config struct {
