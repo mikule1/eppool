@@ -1,0 +1,69 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+	<tr>
+		<td valign="top"><img src="./logo.png" border="0" height="60px"></td>
+        	<td valign="top"><h1 style="font-size: 24px">&nbsp;&nbsp;<strong>EPOOL.EU</strong></h1></td>
+	</tr>
+	<br>
+        <strong>Min. payout threshold: {{config.PayoutThreshold}} Payments rollout every 20 minutes!</strong><br/>
+        <span class="label label-success">PROP</span> Stable and profitable pool with regular payouts.
+      </div>
+      <div class="col-md-3 stats">
+        <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
+        <div><i class="fa fa-tachometer"></i> Pool Hash Rate: <span id="poolHashrate">{{format-hashrate stats.model.hashrate}}</span></div>
+        <div><i class="fa fa-money"></i> Pool Fee: <span id="poolFee" class="label label-success">{{config.PoolFee}}</span></div>
+        {{#if stats.model.stats.lastBlockFound}}
+        <div><i class="fa fa-clock-o"></i> Last Block Found: <span>{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</span></div>
+        {{/if}}
+      </div>
+      <div class="col-md-4 stats">
+        <div><i class="fa fa-unlock-alt"></i> Network Difficulty: <span>{{with-metric-prefix stats.difficulty}}</span></div>
+        <div><i class="fa fa-tachometer"></i> Network Hash Rate: <span>{{format-hashrate stats.hashrate}}</span></div>
+        <div><i class="fa fa-bars"></i> Blockchain Height: <span>{{format-number stats.height}}</span></div>
+        <div><i class="fa fa-clock-o"></i> Current Round Variance: <span>{{format-number stats.roundVariance style='percent'}}</span></div>
+      </div>
+    </div>
+<div style="font-family: Verdana, Tahoma, Arial, sans-serif;font-size: 10px;color: #C9C6BD;text-align: right;padding:4px 4px 0px 4px;margin: 0;width: 100%;border: 1px solid #eee!important;"><iframe src="https://coinlib.io/widget?type=horizontal&theme=light&pref_coin_id=1505&invert_hover=no" width="100%" height="22" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+  </div>
+</div>
+
+<div class="container">
+  {{high-charts mode=chartMode chartOptions=chartOptions content=chartData}}
+  <div class="stats">
+    <h4>Your Stats &amp; Payment History</h4>
+    <div class="input-group">
+      {{input value=cachedLogin class="form-control" placeholder="Enter Your PIRL Address"}}
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
+          <span style="display: inline;"><i class="fa fa-search"></i> Lookup</span>
+        </button>
+      </span>
+    </div>
+  </div>
+  <div>
+    <hr/>
+<h4 class="note note-info text-center">
+<dl class="dl-horizontal">
+    <dt>Server</dt>
+    <dd><code>pirl.epool.eu</code></dd>
+    <dt>Port</dt>
+    <dd><code>8008</code></dd>
+<dt>Proxy</dt>
+    <dd><code>8888</code></dd>
+
+    <dt>Username</dt>
+    <dd><code>your Wallet ID</code></dd>
+    <dt>Password</dt>
+    <dd><code>#</code></dd>
+  </dl>
+</h4>
+    <h4 class="note note-info text-center">
+      ethminer.exe -F {{config.HttpHost}}:8008/&lt;address&gt;/&lt;worker&gt; -G
+    </h4>
+<h4 class="note note-info text-center">
+   EthDcrMiner64.exe -epool stratum+tcp://pirl.epool.eu:8008 -ewal 0xWALLET -epsw x -allpools 1 -allcoins exp -gser 2 -eworker rig1
+</h4>
+  </div>
+</div>

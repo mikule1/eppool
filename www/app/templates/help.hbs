@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="page-header">
+    <h1>How To Mine</h1>
+  </div>
+
+  <table style="float: left; height: 563px;" border="0" width="553">
+<tbody>
+<tr>
+<td style="width: 545px; background-color: #eeeeef;">
+<p><strong>Claymore</strong><em> (can dual mine, hugely popular)</em></p>
+<p>download from <a title="Claymore download" href="https://github.com/nanopool/Claymore-Dual-Miner/releases" target="_blank" rel="noopener">HERE</a></p>
+<p><span style="text-decoration: underline;">Usage:</span></p>
+<p>setx GPU_FORCE_64BIT_PTR 0<br>setx GPU_MAX_HEAP_SIZE 100<br>setx GPU_USE_SYNC_OBJECTS 1<br>setx GPU_MAX_ALLOC_PERCENT 100<br>setx GPU_SINGLE_ALLOC_PERCENT 100</p>
+<p><span style="color: #0000ff;"><strong>EthDcrMiner64.exe -epool stratum+tcp://pirl.epool.eu:8008 -ewal 0x(your pirl wallet) -epsw x -allpools 1 -allcoins exp -gser 2 -eworker rigName</strong></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 545px; background-color: #e6e6e6;">
+<p><strong>Eminer&nbsp; </strong><em>(really good, comes with free cloud interface for stats)</em></p>
+<p>Download from  <a href="https://github.com/ethash/eminer-release" target="_blank" rel="noopener">eminer download page</a></p>
+<p>Register for cloud key @ <a title="eminer download page" href="https://cloud.eminer.net/register" target="_blank">https://cloud.eminer.net/register</a></p>
+<p><span style="text-decoration: underline;">Usage:</span>&nbsp; put this into a .bat file</p>
+<p>setx GPU_FORCE_64BIT_PTR 0<br>setx GPU_MAX_HEAP_SIZE 100<br>setx GPU_USE_SYNC_OBJECTS 1<br>setx GPU_MAX_ALLOC_PERCENT 100<br>setx GPU_SINGLE_ALLOC_PERCENT 100</p>
+<p><span style="color: #0000ff;"><strong>eminer.exe -S pirl.epool.eu:8008 -U 0x(your pirl wallet) -P x --cloud-key (your cloud key) -intensity 48 -N (your rig name)</strong></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 545px; background-color: #eeeeef;">
+<p><strong>Ethminer&nbsp; </strong><em>very common</em></p>
+<p><span style="text-decoration: underline;">Usage:</span>&nbsp; put this into a .bat file</p>
+<p>setx GPU_FORCE_64BIT_PTR 0<br>setx GPU_MAX_HEAP_SIZE 100<br>setx GPU_USE_SYNC_OBJECTS 1<br>setx GPU_MAX_ALLOC_PERCENT 100<br>setx GPU_SINGLE_ALLOC_PERCENT 100</p>
+<p><span style="color: #0000ff;"><strong>ethminer.exe --farm-recheck 200 -G -S pirl.epool.eu:8008 -SP 1 -O 0x(wallet address).rigname --opencl-platform 1 (could also be 0)</strong></span></p>
+</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
